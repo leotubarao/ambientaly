@@ -10,7 +10,13 @@
   }
 
   img {
-    max-width: 380px;
+    @include img-fluid;
+    display: block;
+    width: auto;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 380px;
+    }
   }
 
   &__content {
