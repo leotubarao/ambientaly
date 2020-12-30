@@ -1,0 +1,36 @@
+{
+  "browserSync": {
+    "server": "./public"
+  },
+  "tasks": {
+    "ltco_styles": {
+      "srcPath": "./src/styles/**/*.scss",
+      "destPath": "./public/styles"
+    },
+    "ltco_scripts": {
+      "srcPath": [
+        "./src/scripts/**/*"
+      ],
+      "destPath": "./public/scripts"
+    },
+    "ltco_images": {
+      "srcPath": "./src/images/**/*",
+      "destPath": "./public/images"
+    },
+    "ltco_svgs": {
+      "srcPath": "./src/svgs/**/*.svg",
+      "destPath": "./public/images/svgs"
+    },
+    "ltco_html": {
+      "srcPath": "./src/html/**/*.html",
+      "destPath": "./public"
+    }
+  },
+  "watch": {
+    "ltco_styles": "./src/styles/**",
+    "ltco_scripts": "./src/scripts/**",
+    "ltco_images": "./src/images/**",
+    "ltco_svgs": "./src/svgs/**",
+    "ltco_html": "./src/html/**"
+  }
+}

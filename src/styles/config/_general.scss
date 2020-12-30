@@ -1,0 +1,46 @@
+*::selection {
+  background-color: ltco_color('green-200');
+  color: ltco_color('white');
+}
+
+#root {
+  position: relative;
+}
+
+hr {
+  border-top-color: ltco_color('gray-300');
+}
+
+main.ltco_main {
+  background-color: ltco_color('white');
+  position: relative;
+  min-height: 200px;
+}
+
+.ltco_responsive_space_y {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+
+  @include media-breakpoint-up(md) {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  @include media-breakpoint-up(xl) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.hidden-b {
+  overflow: hidden;
+}
+
+.ltco_error {
+  filter: grayscale(1);
+  opacity: 0.3;
+}
+
+.img-ref {
+  background-image: url('https://via.placeholder.com/1500/DBDBDB/000000?text=No+Image');
+}

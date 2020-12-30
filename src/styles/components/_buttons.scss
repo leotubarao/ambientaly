@@ -1,0 +1,64 @@
+$this: 'ltco_btn_arrow';
+
+[class*="#{$this}__"] > a,
+.#{$this} {
+  display: inline-flex;
+  align-items: center;
+
+  &:before {
+    content: '';
+    background-image: url('#{$ltco_path_svgs}/icon-arrow-right.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-width: 35px;
+    width: 35px;
+    height: 14px;
+    display: block;
+    margin-right: 10px;
+    @include transition($transition-base);
+  }
+
+  &:hover {
+    color: ltco_color();
+    text-decoration: none;
+
+    &:before {
+      animation: arrow 1s ease-in-out infinite;
+    }
+  }
+
+  &.bm-0:before {
+    margin-right: 0;
+  }
+
+  &.btn {
+    width: 200px;
+    justify-content: center;
+  }
+
+  &.btn-large {
+    width: 250px;
+  }
+
+  &.btn-small {
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
+
+  &.white {
+    &:before {
+      background-image: url('#{$ltco_path_svgs}/icon-arrow-right-white.svg');
+    }
+
+    &,
+    &:hover {
+      color: ltco_color('white');
+    }
+  }
+}
+
+@keyframes arrow {
+  50% {
+    transform: translateX(5px);
+  }
+}

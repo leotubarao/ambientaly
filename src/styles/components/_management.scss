@@ -1,0 +1,41 @@
+.ltco_management {
+  > * {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include media-breakpoint-down(md) {
+      flex-direction: column;
+    }
+  }
+
+  img {
+    max-width: 380px;
+  }
+
+  &__content {
+    margin-top: 3rem;
+
+    @include media-breakpoint-up(lg) {
+      position: relative;
+      margin-left: 3rem;
+      padding-left: 3rem;
+      margin-top: 0;
+
+      &:before {
+        content: '';
+        background-color: ltco_color('gray-300');
+        width: 1px;
+        min-height: 80%;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  body:not(.home) & {
+    background-color: ltco_color('gray-100');
+  }
+}
