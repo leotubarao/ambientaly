@@ -1,7 +1,4 @@
 {
-  "browserSync": {
-    "server": "./public"
-  },
   "tasks": {
     "ltco_styles": {
       "srcPath": "./src/styles/**/*.scss",

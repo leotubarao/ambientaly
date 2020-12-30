@@ -89,7 +89,27 @@ gulp.task('ltco_html', ltco_html);
 function browser() {
   let browserSyncOptions = gulppath.browserSync;
 
-  browserSync.init(browserSyncOptions)
+  const options = {
+    server: {
+      baseDir: './public',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
+    },
+    callbacks: {
+      ready: function(_err, bs) {
+        bs.addMiddleware("*", function (_req, res) {
+          res.writeHead(302, {
+            location: "404"
+          });
+
+          res.end("Redirecting!");
+        });
+      }
+    }
+  };
+
+  browserSync.init(browserSyncOptions || options);
 }
 
 gulp.task('browser-sync', browser);
