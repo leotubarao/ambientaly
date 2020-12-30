@@ -1,5 +1,5 @@
 # dependencies
-/node_modudes
+/node_modules
 /public
 
 # misc
@@ -16,3 +16,4 @@
 .log
 .map
 .DS_store
+node_modules
