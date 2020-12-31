@@ -1521,22 +1521,23 @@ pre code {
   width: 100%;
   margin-bottom: 1rem;
   color: #464646;
+  background-color: rgba(0, 66, 114, 0.01);
 }
 
 .table th,
 .table td {
   padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #707070;
+  border-top: 1px solid transparent;
 }
 
 .table thead th {
   vertical-align: bottom;
-  border-bottom: 2px solid #707070;
+  border-bottom: 2px solid transparent;
 }
 
 .table tbody + tbody {
-  border-top: 2px solid #707070;
+  border-top: 2px solid transparent;
 }
 
 .table-sm th,
@@ -1545,12 +1546,12 @@ pre code {
 }
 
 .table-bordered {
-  border: 1px solid #707070;
+  border: 1px solid transparent;
 }
 
 .table-bordered th,
 .table-bordered td {
-  border: 1px solid #707070;
+  border: 1px solid transparent;
 }
 
 .table-bordered thead th,
@@ -1566,12 +1567,12 @@ pre code {
 }
 
 .table-striped tbody tr:nth-of-type(odd) {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 66, 114, 0.05);
 }
 
 .table-hover tbody tr:hover {
   color: #464646;
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 66, 114, 0.075);
 }
 
 .table-primary,
@@ -1775,16 +1776,16 @@ pre code {
 .table-active,
 .table-active > th,
 .table-active > td {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 66, 114, 0.075);
 }
 
 .table-hover .table-active:hover {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 51, 89, 0.075);
 }
 
 .table-hover .table-active:hover > td,
 .table-hover .table-active:hover > th {
-  background-color: rgba(0, 0, 0, 0.075);
+  background-color: rgba(0, 51, 89, 0.075);
 }
 
 .table .thead-dark th {
@@ -1796,7 +1797,7 @@ pre code {
 .table .thead-light th {
   color: #494949;
   background-color: #EDEDED;
-  border-color: #707070;
+  border-color: transparent;
 }
 
 .table-dark {
@@ -9558,11 +9559,11 @@ a.text-white:hover, a.text-white:focus {
   .table-dark td,
   .table-dark thead th,
   .table-dark tbody + tbody {
-    border-color: #707070;
+    border-color: transparent;
   }
   .table .thead-dark th {
     color: inherit;
-    border-color: #707070;
+    border-color: transparent;
   }
 }
 
@@ -11796,6 +11797,52 @@ body:not(.home) .ltco_management {
   color: currentColor;
   margin-bottom: 2rem;
   line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .ltco_produtos article .table td {
+    padding-left: 2rem;
+  }
+}
+
+.ltco_produtos article .table td + td {
+  border-left: 2px solid rgba(0, 66, 114, 0.06);
+}
+
+.ltco_governanca article .ltco_box {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+}
+
+@media (min-width: 992px) {
+  .ltco_governanca article .ltco_box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.ltco_governanca article .ltco_box > * {
+  background-color: #1b5625;
+  color: #FFF;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.ltco_governanca article .ltco_box > * > * {
+  color: currentColor;
+}
+
+.ltco_governanca article .ltco_box > *.lighten {
+  background-color: #469826;
+}
+
+.ltco_governanca article .ltco_box > *.lighten :last-child {
+  margin-top: auto;
+}
+
+.ltco_governanca article .ltco_box ul {
+  padding-left: 1.5rem;
 }
 
 .ltco_unidades article .ltco_unit {
