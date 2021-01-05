@@ -21,6 +21,10 @@
     "ltco_html": {
       "srcPath": "./src/html/**/*.html",
       "destPath": "./public"
+    },
+    "ltco_includes": {
+      "srcPath": "./src/includes/**/*",
+      "destPath": "./public/includes"
     }
   },
   "watch": {
@@ -28,6 +32,7 @@
     "ltco_scripts": "./src/scripts/**",
     "ltco_images": "./src/images/**",
     "ltco_svgs": "./src/svgs/**",
-    "ltco_html": "./src/html/**"
+    "ltco_html": "./src/html/**",
+    "ltco_includes": "./src/includes/**"
   }
 }

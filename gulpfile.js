@@ -3,8 +3,8 @@ require('dotenv').config();
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify-es').default;
-const concat = require('gulp-concat');
+// const uglify = require('gulp-uglify-es').default;
+// const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const svgmin = require('gulp-svgmin');
 const sourcemaps = require('gulp-sourcemaps');
@@ -29,12 +29,12 @@ function ltco_styles() {
   let { srcPath, destPath } = gulppath.tasks.ltco_styles;
 
   return gulp
-    .src(srcPath, optionsSourcemaps)
+    .src(srcPath)
     .pipe(sass({
       outputStyle: isProductionEnviroment ? 'compressed' : 'expanded' // expanded / nested / compact / compressed
     }))
     .pipe(autoprefixer())
-    .pipe(gulp.dest(destPath, optionsSourcemaps))
+    .pipe(gulp.dest(destPath))
     .pipe(browserSync.stream())
 }
 
@@ -44,9 +44,9 @@ function ltco_scripts() {
   let { srcPath, destPath } = gulppath.tasks.ltco_scripts;
 
   return gulp
-    .src(srcPath, optionsSourcemaps)
+    .src(srcPath)
     .pipe(babel())
-    .pipe(gulp.dest(destPath, optionsSourcemaps))
+    .pipe(gulp.dest(destPath))
     .pipe(browserSync.stream())
 }
 
@@ -85,6 +85,17 @@ function ltco_html() {
 }
 
 gulp.task('ltco_html', ltco_html);
+
+function ltco_includes() {
+  let { srcPath, destPath } = gulppath.tasks.ltco_includes;
+
+  return gulp
+    .src(srcPath)
+    .pipe(gulp.dest(destPath))
+    .pipe(browserSync.stream())
+}
+
+gulp.task('ltco_includes', ltco_includes);
 
 function browser() {
   let browserSyncOptions = gulppath.browserSync;
@@ -126,6 +137,8 @@ function watchLT() {
   gulp.watch(watchPath.ltco_svgs, ltco_svgs);
 
   gulp.watch(watchPath.ltco_html, ltco_html);
+
+  gulp.watch(watchPath.ltco_includes, ltco_includes);
 }
 
 gulp.task('watchLT', watchLT);
