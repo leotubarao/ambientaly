@@ -1,5 +1,5 @@
-.ltco_governanca article {
-  .ltco_box {
+.ltco_body_sustentabilidade article {
+  .ltco_box > [class*="container"] {
     margin-top: 2rem;
     display: grid;
     gap: 2rem;
@@ -12,17 +12,25 @@
       background-color: ltco_color('green-500');
       color: ltco_color('white');
       padding: 2rem;
-      display: flex;
-      flex-direction: column;
 
-      > * {
+      [class*="container"] {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      * {
         color: currentColor;
+      }
+
+      .ltco_full {
+        display: block;
       }
 
       &.lighten {
         background-color: ltco_color('green-300');
 
-        :last-child {
+        :last-child:not([class*="container"]) {
           margin-top: auto;
         }
       }

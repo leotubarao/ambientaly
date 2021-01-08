@@ -1,5 +1,5 @@
-.ltco_unidades article {
-  .ltco_unit {
+.ltco_body_unidades article {
+  .ltco_unit > [class*="container"] {
     display: flex;
     flex-direction: column;
     margin-top: 2rem;

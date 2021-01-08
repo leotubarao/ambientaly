@@ -44,3 +44,8 @@ main.ltco_main {
 .img-ref {
   background-image: url('https://via.placeholder.com/1500/DBDBDB/000000?text=No+Image');
 }
+
+.ltco_image img {
+  @extend .img-fluid;
+  @extend .d-block;
+}

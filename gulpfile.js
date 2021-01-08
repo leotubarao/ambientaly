@@ -3,11 +3,8 @@ require('dotenv').config();
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const autoprefixer = require('gulp-autoprefixer');
-// const uglify = require('gulp-uglify-es').default;
-// const concat = require('gulp-concat');
 const babel = require('gulp-babel');
 const svgmin = require('gulp-svgmin');
-const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 
 const gulppath = require('./gulppath');
@@ -22,8 +19,6 @@ for ( let key in taskObjectArr ) {
     tasksArr.push(taskObjectArr[key][0]);
   }
 }
-
-const optionsSourcemaps = isProductionEnviroment ? { sourcemaps: true } : null;
 
 function ltco_styles() {
   let { srcPath, destPath } = gulppath.tasks.ltco_styles;
@@ -75,28 +70,6 @@ function ltco_svgs() {
 
 gulp.task('ltco_svgs', ltco_svgs);
 
-function ltco_html() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_html;
-
-  return gulp
-    .src(srcPath)
-    .pipe(gulp.dest(destPath))
-    .pipe(browserSync.stream())
-}
-
-gulp.task('ltco_html', ltco_html);
-
-function ltco_includes() {
-  let { srcPath, destPath } = gulppath.tasks.ltco_includes;
-
-  return gulp
-    .src(srcPath)
-    .pipe(gulp.dest(destPath))
-    .pipe(browserSync.stream())
-}
-
-gulp.task('ltco_includes', ltco_includes);
-
 function browser() {
   let browserSyncOptions = gulppath.browserSync;
 
@@ -136,9 +109,7 @@ function watchLT() {
 
   gulp.watch(watchPath.ltco_svgs, ltco_svgs);
 
-  gulp.watch(watchPath.ltco_html, ltco_html);
-
-  gulp.watch(watchPath.ltco_includes, ltco_includes);
+  gulp.watch(watchPath.ltco_php).on('change', browserSync.reload);
 }
 
 gulp.task('watchLT', watchLT);

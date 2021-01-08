@@ -1,5 +1,9 @@
-.ltco_produtos article {
-  .table {
+.ltco_body_produtos article {
+  .ltco_table table {
+    @extend .table;
+    @extend .table-striped;
+    @extend .table-hover;
+
     td {
 
       @include media-breakpoint-up(md) {

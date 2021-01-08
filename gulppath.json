@@ -1,13 +1,18 @@
 {
+  "browserSync": {
+    "proxy": "localhost/ambientaly",
+    "port": 3000,
+    "ui": {
+      "port": 7678
+    }
+  },
   "tasks": {
     "ltco_styles": {
       "srcPath": "./src/styles/**/*.scss",
       "destPath": "./public/styles"
     },
     "ltco_scripts": {
-      "srcPath": [
-        "./src/scripts/**/*"
-      ],
+      "srcPath": "./src/scripts/**/*",
       "destPath": "./public/scripts"
     },
     "ltco_images": {
@@ -17,14 +22,6 @@
     "ltco_svgs": {
       "srcPath": "./src/svgs/**/*.svg",
       "destPath": "./public/images/svgs"
-    },
-    "ltco_html": {
-      "srcPath": "./src/html/**/*.html",
-      "destPath": "./public"
-    },
-    "ltco_includes": {
-      "srcPath": "./src/includes/**/*",
-      "destPath": "./public/includes"
     }
   },
   "watch": {
@@ -32,7 +29,6 @@
     "ltco_scripts": "./src/scripts/**",
     "ltco_images": "./src/images/**",
     "ltco_svgs": "./src/svgs/**",
-    "ltco_html": "./src/html/**",
-    "ltco_includes": "./src/includes/**"
+    "ltco_php": "**/*.php"
   }
 }
