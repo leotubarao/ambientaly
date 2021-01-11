@@ -17,7 +17,7 @@ function ltco_styles_theme() {
 
   wp_register_style(
     'fonts-google',
-    'https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;700&display=swap',
+    'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap',
     array(),
     false
   );
