@@ -134,7 +134,7 @@ function ltco_custom_permalinks_products($post_link, $id = 0) {
   $post = get_post($id);
 
   if (is_object($post)) {
-    $terms = wp_get_object_terms($post->ID, 'line-products');
+    $terms = wp_get_object_terms($post->ID, 'segment-products');
 
     if ($terms) {
       return str_replace('%cat_products%', $terms[0]->slug, $post_link);

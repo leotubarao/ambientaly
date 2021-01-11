@@ -23,15 +23,11 @@
     }
   }
 
-  .ltco_header_green & {
-    background-color: ltco_color('green-300');
+  .single & {
+    height: 200px;
   }
 
-  $images: 'empresa', 'contato', 'governanca', 'produtos', 'unidades';
-
-  @each $image in $images {
-    .ltco_#{$image} & {
-      background-image: url('#{$ltco_path_images}/#{$image}-bg.jpg');
-    }
+  .ltco_body_term_green & {
+    background-color: ltco_color('green-300');
   }
 }

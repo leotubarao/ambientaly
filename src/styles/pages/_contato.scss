@@ -1,7 +1,9 @@
 .ltco_body_contato article {
-  &.ltco_units {
+  &.ltco_wrapper_color {
     background-color: ltco_color('gray-100');
+  }
 
+  .ltco_units {
     .ltco_units__wrapper {
       display: grid;
       gap: 2rem;

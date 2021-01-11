@@ -28,23 +28,14 @@ add_filter( 'body_class', 'ltco_body_class' );
 function ltco_body_class_terms( $classes ) {
   global $post;
 
-  if ( is_singular('products') ) {
-    $terms = ['line-products', 'segment-products'];
-
-    $line_term = get_the_terms( get_the_ID($post), $terms[0] );
-    $segment_term = get_the_terms( get_the_ID($post), $terms[1] );
-
-    $termsParent = get_term_by( 'id', $line_term[0]->parent, $terms[0] );
-
-    $cond = $termsParent->slug;
+  if ( is_singular('product') ) {
+    $term = get_the_terms( get_the_ID($post), 'segment-products' );
 
     $classTerms = 'blue';
 
-    if ($segment_term[0]->slug === 'industrial' && $cond === 'aguas') $classTerms = 'orange';
+    if ($term[0]->slug === 'industrial') $classTerms = 'green';
 
-    if ($cond === 'agro') $classTerms = 'green';
-
-    if ($cond === 'mineracao') $classTerms = 'brown';
+    if ($term[0]->slug === 'saneamento') $classTerms = 'blue';
 
     array_push( $classes, replacePostName("term_$classTerms") );
   }

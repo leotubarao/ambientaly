@@ -74,3 +74,24 @@ $this: 'ltco_btn_arrow';
     width: 100%;
   }
 }
+
+.ltco_see_more {
+  display: flex;
+  align-items: center;
+  color: ltco_color('white');
+
+  &:before {
+    content: '';
+    background-image: url('#{$ltco_path_svgs}/icon-circle-plus.svg');
+    width: 20px;
+    height: 20px;
+    display: block;
+    margin-left: 0.25rem;
+    order: 1;
+  }
+
+  &:hover {
+    color: ltco_color('white');
+    text-decoration: none;
+  }
+}

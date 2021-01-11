@@ -17,19 +17,8 @@ main.ltco_main {
   min-height: 200px;
 }
 
-.ltco_responsive_space_y {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-
-  @include media-breakpoint-up(md) {
-    padding-top: 4.5rem;
-    padding-bottom: 4.5rem;
-  }
-
-  @include media-breakpoint-up(xl) {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
+.ltco_grid > [class*="container"] {
+  @extend %ltco_grid;
 }
 
 .hidden-b {

@@ -5,9 +5,9 @@
     margin-top: 2rem;
 
     figure {
-    @include media-breakpoint-down(sm) {
-      align-self: center;
-    }
+      @include media-breakpoint-down(sm) {
+        align-self: center;
+      }
 
       img {
         @include img-fluid();

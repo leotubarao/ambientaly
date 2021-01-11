@@ -47,24 +47,11 @@ function _ltco( $value = null ) {
 
 /*=====  End of Debug PHP  ======*/
 
-
-function custom_excerpt_length( $length ) {
-  return 20;
-}
-
-function new_excerpt_more($more) {
-  return '...';
-}
-
-// add_filter( 'excerpt_length', 'custom_excerpt_length');
-
-// add_filter('excerpt_more', 'new_excerpt_more');
-
 function cc_mime_types($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
- }
- add_filter('upload_mimes', 'cc_mime_types');
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
 /*==================================
 =            Shortcodes            =
@@ -100,32 +87,17 @@ function ltco_divider_color( $atts ) {
     $atts
   );
 
-  $color = ($atts['color'] === null) ? 'container py-5' : 'ltco_wrapper_color';
   $class = $atts['class'];
 
-  return "</article><article class='$color $class'>";
+  if ($atts['color']) $colorClass = 'ltco_wrapper_color';
 
+  $post_class = esc_attr( implode( ' ', get_post_class( $colorClass ) ) );
+
+  return "</div></article><article class='$post_class'><div class='container py-5 $class'>";
 }
 add_shortcode( 'divider', 'ltco_divider_color' );
 
 /*=====  End of Shortcodes  ======*/
-
-function add_class_the_tags( $html ) {
-  return str_replace( '<a', '<a class="btn btn-outline-dark px-3 rounded-0"', $html );
-}
-// add_filter('the_tags', 'add_class_the_tags', 10, 1);
-
-function ltco_pre_get_posts( $query ) {
-  if ( is_home() && $query->is_main_query() ) {
-    $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1 ;
-
-    $query->set( 'post_type', 'post' );
-    $query->set( 'paged', $paged );
-    $query->set( 'category__not_in', [9] );
-    // $query->set( 'posts_per_page', 4 ); // Para testes
-  }
-}
-// add_action( 'pre_get_posts', 'ltco_pre_get_posts' );
 
 /*=======================================
 =            Themes Supports            =
@@ -134,12 +106,7 @@ function ltco_pre_get_posts( $query ) {
 /*----------  Post thumbnail  ----------*/
 
 add_theme_support( 'post-thumbnails' );
-/*
-update_option('thumbnail_size_w', 215);
-update_option('thumbnail_size_h', 215);
 
-add_image_size( 'post_blog_large', 1440, 630, array( 'center', 'center' ) );
-*/
 /*----------  Page Excerpt  ----------*/
 
 add_post_type_support( 'page', 'excerpt' );
