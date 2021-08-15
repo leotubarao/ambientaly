@@ -15,8 +15,8 @@ function ltco_search_scripts() {
   wp_enqueue_script( 'ltco_filter_products', ltco_path('scripts').'/ltco_filter_products.js', array( 'jquery' ), '1.0.0', true );
 
   wp_localize_script( 'ltco_filter_products', 'options', array(
-		'page_redirect' => get_permalink(18)
-	) );
+    'page_redirect' => get_permalink(18)
+  ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'ltco_search_scripts');

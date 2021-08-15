@@ -12,17 +12,6 @@ function ltco_path($dirname) {
   return get_template_directory_uri().$dirname;
 }
 
-function ltco_mailer( $phpmailer ) {
-  $phpmailer->isSMTP();
-  $phpmailer->Host = 'smtp.example.com';
-  $phpmailer->SMTPAuth = true;
-  $phpmailer->Port = 465;
-  $phpmailer->Username = 'user@example.com';
-  $phpmailer->Password = 'secret';
-}
-
-// add_action( 'phpmailer_init', 'ltco_mailer' );
-
 function ltco_post_meta_edit($type = 'post', $margin = '') {
   edit_post_link("Editar $type","","","","badge badge-warning p-2 text-uppercase $margin");
 }

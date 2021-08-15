@@ -24,11 +24,10 @@ try {
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
 
   $mail->SMTPAuth = true;
-  $mail->Host = 'smtp.sendgrid.net';
+  $mail->Host = 'smtp.example.com';
   $mail->Port = 465;
-  $mail->Username = 'apikey';
-  $mail->Password = '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';
-  // $mail->Password = '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';
+  $mail->Username = 'user';
+  $mail->Password = 'secret';
 
   //Recipients
   $mail->setFrom($from, $nameCompany);

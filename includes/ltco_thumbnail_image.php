@@ -8,7 +8,7 @@ function styleInline( $image ) {
 }
 
 function ltco_thumbnail_image( $id = null ) {
-  if ( is_singular('products') ) return;
+  if ( is_singular('product') ) return;
 
   if ( has_post_thumbnail( $id ) ) return get_the_post_thumbnail_url( $id );
 }

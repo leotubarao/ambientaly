@@ -1,4 +1,4 @@
-<form class="ltco_form" data-form-type="ltco_form">
+<form class="ltco_form" data-form-type="ltco_form" novalidate>
   <div class="alert" hidden data-form-alert></div>
   <div class="form-row">
     <div class="col-12 col-md-6">

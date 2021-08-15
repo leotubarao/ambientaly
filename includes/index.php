@@ -36,4 +36,6 @@ require_once('ltco_scripts_theme.php');
 
 require_once('ltco_customize_theme.php');
 
+require_once('ltco_contact_sender.php');
+
 /*=====  End of Includes Theme  ======*/
