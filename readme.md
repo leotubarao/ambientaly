@@ -1,7 +1,7 @@
-# Ambientaly Theme Wordpress
+# Tema Wordpress para Ambientaly
 
-Atenção: Tema em construção.
+Desenvolvimento de um Website com linguagens padrões de Front End e WordPress rodando no Back End, para facilitar a manutenção e gerenciamento de conteúdo.
 
 Para visualizar, basta clicar no link abaixo:
 
-[Link para o site.](https://www.ambientaly.com)
+[Link para o projeto.](https://leotubarao.github.io/ambientaly)
