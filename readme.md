@@ -1,4 +1,4 @@
-# Tema Wordpress para Ambientaly
+# Tema Wordpress para AMBIENTALY
 
 Desenvolvimento de um Website com linguagens padrões de Front End e WordPress rodando no Back End, para facilitar a manutenção e gerenciamento de conteúdo.
 
