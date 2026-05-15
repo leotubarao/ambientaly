@@ -1,5 +1,6 @@
 <?php
 function ltco_social_nav( $params = null ) {
+  if ( !function_exists('get_field') ) return;
 
   $sociais = array(
     array(
